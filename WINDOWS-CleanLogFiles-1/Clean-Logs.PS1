@@ -7,7 +7,7 @@
    DeleteFiles "C:\inetpub\logs\LogFiles" 30 "*.log"
 .EXAMPLE
    $ExchangeLogs="C:\Program Files\Microsoft\Exchange Server\V15\Logging\"
-   DeleteFiles($ExchangeLogs, 30, "*.etl")
+   DeleteFiles $ExchangeLogs 30, "*.etl"
 .INPUTS
    $targetFolder=Directory containing the files to be deleted
    $daysOlderThan=Any files older than x days will be deleted.
