@@ -1,17 +1,13 @@
 <#
 .SYNOPSIS
     Disable all local accounts on the PC.
-
 .DESCRIPTION
     This script gets all local accounts present on the PC and disables them.  This script should only be run on a PC that is domain attached.  
 	***Be cautious when running so that users are not locked out of the PC.***
-
 .PARAMETER N/A
     No parameters needed
-
 .EXAMPLE
     Run script as is listed below.
-
 .NOTES
     NAME:    WINDOWS-DisableLocalAccounts.ps1
     AUTHOR:    Lassalle
@@ -30,5 +26,4 @@ $AllLocalAccounts = Get-WmiObject -Class Win32_UserAccount -Namespace "root\cimv
 Foreach($LocalAccount in $AllLocalAccounts)
 	{
 		Disable-LocalUser $LocalAccount.Name
-		
 	}

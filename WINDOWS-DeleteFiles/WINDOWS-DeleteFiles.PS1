@@ -2,28 +2,36 @@
 .Synopsis
    Deletes files (file type and age defined by user) from a Windows machine
 .DESCRIPTION
-   Long description
+   Deletes files (file type and age defined by user) from a Windows machine
+.PARAMETER $targetFolder
+    Location directory that you would like to delete files from
+.PARAMETER $daysOlderThan
+    Maximum file age that you would like to keep in number of days.  (7 - would delete any files older than 7 days old)
+.PARAMETER $fileType
+    File type that you would like to delete (examples:  *.log, *.*, etc.)
+.OUTPUTS
+   N/A
 .EXAMPLE
    DeleteFiles "C:\inetpub\logs\LogFiles" 30 "*.log"
 .EXAMPLE
    $ExchangeLogs="C:\Program Files\Microsoft\Exchange Server\V15\Logging\"
    DeleteFiles $ExchangeLogs 30, "*.etl"
-.INPUTS
-   $targetFolder=Directory containing the files to be deleted
-   $daysOlderThan=Any files older than x days will be deleted.
-   $fileType=File extension, or other name parameters, that will be deleted
-.OUTPUTS
-   N/A
 .NOTES
    Originally created to be run on Exchange directories below, but adapted for all files/directories so make tool more versatile
    \inetpub\logs\LogFiles\
    \Program Files\Microsoft\Exchange Server\V15\Logging\
    \Program Files\Microsoft\Exchange Server\V15\Bin\Search\Ceres\Diagnostics\ETLTraces\
    \Program Files\Microsoft\Exchange Server\V15\Bin\Search\Ceres\Diagnostics\Logs
-.COMPONENT
-   The component this cmdlet belongs to
-.ROLE
-   The role this cmdlet belongs to
+
+    NAME:    WINDOWS-DeleteFiles.ps1
+    AUTHOR:    Lassalle
+    DATE:    2024/2/18
+    WWW:    
+    GITHUB: https://github.com/DEV-M65K45
+
+    VERSION HISTORY:
+    2024.1
+        Initial Version
 .FUNCTIONALITY
    Deletes files defined by user
 #>
