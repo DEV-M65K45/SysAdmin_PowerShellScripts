@@ -1,0 +1,60 @@
+<#
+.SYNOPSIS
+    The Get-DomainComputer function allows you to get information from an Active Directory Computer object using ADSI.
+
+.DESCRIPTION
+    x
+
+.PARAMETER xxx
+    x
+
+.PARAMETER xxx
+    x
+
+.PARAMETER xxx
+    x
+
+.PARAMETER xxx
+    x
+
+.EXAMPLE
+    xxx
+
+    This will xxxxx
+
+.EXAMPLE
+    xxx
+
+    This will xxx
+
+.EXAMPLE
+    xxx
+
+    This will xxx
+
+.EXAMPLE
+    xxx
+
+    This will xxx
+
+.EXAMPLE
+    xxx
+
+    This xxx
+
+.EXAMPLE
+    xxx
+
+    This will xxx
+
+.NOTES
+    NAME:    xxx.ps1
+    AUTHOR:    xxx
+    DATE:    2024/02/18
+    WWW:    
+    GITHUB: https://github.com/DEV-M65K45
+
+    VERSION HISTORY:
+    2024.1 
+        Initial Version
+#>
