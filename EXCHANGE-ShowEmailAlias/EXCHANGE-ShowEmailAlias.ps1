@@ -2,11 +2,11 @@
 .SYNOPSIS
     Gets all email alias and saves then to a csv file for manipulation/searching.
 .DESCRIPTION
-    This script gets all email alias' in the domain and puts them in a csv file for manipulation/searching/etc. 
+    This powershell command gets all email alias' in the domain and puts them in a csv file for manipulation/searching/etc. 
 .PARAMETER N/A
     No parameters needed
 .EXAMPLE
-    Run script as is listed below.
+    Run command as is listed below.
 .NOTES
     NAME:    EXCHANGE-ShowEmailAlias.ps1
     AUTHOR:    Lassalle
