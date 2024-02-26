@@ -32,7 +32,8 @@ Get-DynamicDistributionGroup -Identity $groupName | Select-Object RequireSenderA
 $groupName = _GRP.TestGroup@domain.com    
 Set-DynamicDistributionGroup -Identity $groupName -RequireSenderAuthenticationEnabled $false
 
-#bulk edit distributiongroup.  Choose from results of list above.  "-RequireSenderAuthenticatedEnabled" is only an example.
+#bulk edit distribution groups.  Choose from results of list above.  "-RequireSenderAuthenticatedEnabled" is only an example.
 $groupName = _GRP.TestGroup@domain.com 
+#csv file containing list of distribution groups to edit.
 $csvFile = "C:\temp\csvfile.csv"
 Get-Content $csvFile | Set-DynamicDistributionGroup -RequireSenderAuthenticationEnabled $false
