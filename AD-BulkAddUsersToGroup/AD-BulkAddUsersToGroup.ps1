@@ -8,8 +8,7 @@
 .PARAMETER $ADGroup
     Active Directory Group that users should be added to.
 .EXAMPLE
-    ADDUsersToGroup "C:\Temp\userlist.csv" "Example AD Group"
-    This will Add all users in the userlist.csv file to the Active Diretory Group named "Example AD Group"
+    Script should be run as is listed below.
 .NOTES
     NAME:    AD-BulkAddUsersToGroup.ps1
     AUTHOR:    Lassalle
@@ -22,10 +21,9 @@
         Initial Version
 #>
 
+Import-Module ActiveDirectory 
 
-Function ADDUsersToGroup($userList, $ADGroup)
-{
-    Import-Module ActiveDirectory 
-    Import-Csv -Path $userList | ForEach-Object {Add-ADGroupMember -Identity $ADGroup -Members $_.’User-Name’}
-    
-}
+$userList = "C:\Temp\userList.csv"
+$ADGroup = "ExampleADGroup"
+
+Import-Csv -Path $userList | ForEach-Object {Add-ADGroupMember -Identity $ADGroup -Members $_.’User-Name’}

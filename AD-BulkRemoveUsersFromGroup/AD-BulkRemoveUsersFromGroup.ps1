@@ -8,8 +8,7 @@
 .PARAMETER $ADGroup
     Active Directory Group that users should be removed from.
 .EXAMPLE
-    RemoveUsersFromGroup "C:\Temp\userlist.csv" "Example AD Group"
-    This will remove all users in the userlist.csv file from the Active Diretory Group named "Example AD Group"
+    Script should be run as is listed below.
 .NOTES
     NAME:    AD-BulkRemoveUsersFromGroup.ps1
     AUTHOR:    Lassalle
@@ -23,9 +22,9 @@
 #>
 
 
-Function RemoveUsersFromGroup($userList, $ADGroup)
-{
-    Import-Module ActiveDirectory 
-    Import-Csv -Path $userList | ForEach-Object {Remove-ADGroupMember -Identity $ADGroup -Members $_.’User-Name’ -Confirm:$false}
+Import-Module ActiveDirectory 
+
+$userList = "C:\Temp\userlist.csv"
+$ADGroup = "ExampleADGroup"
     
-}
+Import-Csv -Path $userList | ForEach-Object {Remove-ADGroupMember -Identity $ADGroup -Members $_.’User-Name’ -Confirm:$false}

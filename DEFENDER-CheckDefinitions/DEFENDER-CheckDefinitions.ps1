@@ -8,7 +8,7 @@
 .OUTPUTS
    N/A
 .EXAMPLE
-   CheckDefinitions "C:\temp\pcs.csv"
+   Script should be run as is listed below.
 .NOTES
    Ensure that csv file has a column header of "pcname"
 
@@ -26,19 +26,18 @@
 #>
 
 
-Function CheckDefinitions($csvPath)
-{
-    $pclist = Import-CSV -Path $csvPath
-    $pcs = $pclist.pcname
 
-    foreach ($pc in $pcs) {
-        if (Test-Connection $pc -count 1 -quiet) {
-            write-host $pc, "...Checking Defender definitions" -ForegroundColor Green
-            Invoke-Command $pc -Scriptblock {
-            Get-MpComputerStatus | Select-Object AntivirusSignatureLastUpdated
-              }
-        }
-        else {
-            write-host $pc, "UNAVAILABLE" -ForegroundColor Red -BackgroundColor Yellow}
+$csvPath = "C:\Temp\pcs.csv"
+$pclist = Import-CSV -Path $csvPath
+$pcs = $pclist.pcname
+
+foreach ($pc in $pcs) {
+    if (Test-Connection $pc -count 1 -quiet) {
+        write-host $pc, "...Checking Defender definitions" -ForegroundColor Green
+        Invoke-Command $pc -Scriptblock {
+        Get-MpComputerStatus | Select-Object AntivirusSignatureLastUpdated
+          }
     }
+    else {
+        write-host $pc, "UNAVAILABLE" -ForegroundColor Red -BackgroundColor Yellow}
 }
